@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1,
+        "priority": 1,
+        "action": {
+            "type": "modifyHeaders",
+            "requestHeaders": [
+                {
+                    "header": "cookie",
+                    "operation": "remove"
+                }
+            ],
+            "responseHeaders": [
+                {
+                    "header": "set-cookie",
+                    "operation": "remove"
+                }
+            ]
+        },
+        "condition": {
+            "regexFilter": "^https?://(www|play)\\.google\\.com/(search|complete/search|async/bgasy|client_204|log).*",
+            "resourceTypes": [
+                "main_frame",
+                "sub_frame",
+                "stylesheet",
+                "script",
+                "image",
+                "font",
+                "object",
+                "xmlhttprequest",
+                "ping",
+                "csp_report",
+                "media",
+                "websocket",
+                "webtransport",
+                "other"
+            ]
+        }
+    }
+]
